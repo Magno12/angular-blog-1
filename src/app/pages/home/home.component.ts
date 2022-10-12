@@ -1,3 +1,4 @@
+import { dataFake } from './../../data/dataFake';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  lista = [
+    {
+      "id": "",
+      "title": "",
+      "description": "",
+      "photoCover": ""
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
+    this.getValuesComponent();
+  }
+
+
+  //buscando informações no dataFake
+  getValuesComponent() {
+    this.lista = dataFake.filter(result =>
+      result
+    )
+/* 
+    console.log("lista", this.lista) */
   }
 
 }

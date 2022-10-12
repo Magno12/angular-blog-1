@@ -2,15 +2,14 @@
 
   <div class="container__small-card-content">
     <div class="small-card__photo">
-      <img
-        src="{{ photoCover }}"
-        alt=""
-        srcset=""
-      >
+      <img src="{{ photoCover }}" alt="" srcset="">
     </div>
 
     <div class="small-card__title">
-      <h1><a [routerLink]="['content', Id]" >{{ cardTitle }}</a></h1>
+      <h1 *ngIf="__isValideCont"><a [routerLink]="['content', Id]">{{ cardTitle }}</a></h1>
+      <h1 *ngIf="!__isValideCont"><a>{{ cardTitle }}</a></h1>
+      
+      <!--  <h1 *ngIf="!__isValideCont"><a [routerLink]="['detail', Id]">{{ cardTitle }}</a></h1> -->
     </div>
   </div>
 
@@ -19,6 +18,3 @@
   </div>
 
 </div>
-
-
-
